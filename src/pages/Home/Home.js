@@ -1,9 +1,14 @@
 import React from "react";
+import Pagination from "../../Components/Pagination";
+import Tags from "../../Components/Tags";
+import Videos from "../../Components/Videos";
 
 const Home = () => {
   return (
     <div>
-      <h1>This is Home Page</h1>
+      <Tags />
+      <Videos />
+      <Pagination />
     </div>
   );
 };
