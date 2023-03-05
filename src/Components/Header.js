@@ -1,6 +1,6 @@
 import React from "react";
 import lws_logo from "../assets/img/lws.svg";
-import search from "../assets/img/search.svg";
+import SearchForm from "./SearchForm";
 const Header = () => {
   return (
     <nav className="bg-slate-100 shadow-md">
@@ -9,19 +9,7 @@ const Header = () => {
           <img className="h-10" src={lws_logo} alt="Learn with Sumit" />
         </a>
         <div className="border border-slate-200 flex items-center bg-white h-10 px-5 rounded-lg text-sm ring-emerald-200">
-          <form>
-            <input
-              className="outline-none border-none mr-2"
-              type="search"
-              name="search"
-              placeholder="Search"
-            />
-          </form>
-          <img
-            className="inline h-4 cursor-pointer"
-            src={search}
-            alt="Search"
-          />
+          <SearchForm />
         </div>
       </div>
     </nav>
