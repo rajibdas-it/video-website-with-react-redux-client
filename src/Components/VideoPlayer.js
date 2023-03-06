@@ -1,16 +1,16 @@
 import React from "react";
 
 const VideoPlayer = ({ video }) => {
-  console.log(video);
+  // console.log(video);
   return (
     <iframe
       width="100%"
       className="aspect-video"
       src={video?.link}
       title={video?.title}
-      frameborder=""
+      frameBorder=""
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
+      allowFullScreen
     ></iframe>
   );
 };
