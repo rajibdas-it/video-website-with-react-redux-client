@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchVideos } from "../features/videos/videosSlice";
+import Error from "./Error";
 import Loading from "./Loading";
 import Video from "./Video";
 
@@ -20,10 +21,10 @@ const Videos = () => {
     content = <Loading />;
   }
   if (!isLoading && isError) {
-    content = <div className="col-span-12">{error}</div>;
+    content = <Error>{error}</Error>;
   }
   if (!isLoading && !isError && videos.length === 0) {
-    content = <div className="col-span-12">No Video Found</div>;
+    content = <Error>{`No Videos Found`}</Error>;
   }
 
   if (!isLoading && !isError && videos?.length > 0) {
