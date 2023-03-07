@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const RelatedVideo = ({ relVideo }) => {
-  console.log(relVideo);
+  // console.log(relVideo);
   const { id, title, duration, author, date, thumbnail, views } = relVideo;
   return (
     <div className="w-full flex flex-row gap-2 mb-4">

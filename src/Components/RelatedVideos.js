@@ -18,7 +18,7 @@ const RelatedVideos = ({ video }) => {
   const { isLoading, isError, error, relatedVideos } = useSelector(
     (state) => state.relatedVideos
   );
-  // console.log(relatedVideos);
+
   return (
     <div className="col-span-full lg:col-auto max-h-[570px] overflow-y-auto">
       {isLoading ? (
