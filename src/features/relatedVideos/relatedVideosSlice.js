@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import getRelatedVideos from "./relatedVideosAPI";
 
 const initialState = {
-  videos: [],
+  relatedVideos: [],
   isLoading: false,
   isError: false,
   error: "",
