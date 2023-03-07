@@ -8,19 +8,20 @@ const Tag = ({ tag }) => {
   const { tags: selectTags } = useSelector((state) => state.filter);
 
   const isSelected = selectTags.includes(title) ? true : false;
+  // console.log(isSelected);
 
   const style = isSelected
     ? "bg-blue-600 text-white px-4 py-1 rounded-full cursor-pointer"
     : "bg-blue-100 text-blue-600 px-4 py-1 rounded-full cursor-pointer";
 
   const handleSelect = (title) => {
-    if (isSelected) {
+    if (!isSelected) {
       dispatch(tagSelected(title));
     } else {
       dispatch(tagRemoved(title));
     }
   };
-  console.log(selectTags);
+  // console.log(selectTags);
 
   return (
     <div onClick={() => handleSelect(title)} className={style}>
