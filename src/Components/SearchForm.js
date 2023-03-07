@@ -1,18 +1,34 @@
-import React from "react";
-import search from "../assets/img/search.svg";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import searchIcon from "../assets/img/search.svg";
+import { searched } from "../features/filter/filterSlice";
 
 const SearchForm = () => {
+  const { search } = useSelector((state) => state.filter);
+  const dispatch = useDispatch();
+  const [input, setInput] = useState(search);
+
+  const handleSearch = (e) => {
+    e.preventDeafult();
+    dispatch(searched(input));
+  };
   return (
     <>
-      <form>
+      <form onSubmit={handleSearch}>
         <input
           className="outline-none border-none mr-2"
           type="search"
           name="search"
           placeholder="Search"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
         />
       </form>
-      <img className="inline h-4 cursor-pointer" src={search} alt="Search" />
+      <img
+        className="inline h-4 cursor-pointer"
+        src={searchIcon}
+        alt="Search"
+      />
     </>
   );
 };
