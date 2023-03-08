@@ -9,9 +9,10 @@ const SearchForm = () => {
   const [input, setInput] = useState(search);
 
   const handleSearch = (e) => {
-    e.preventDeafult();
+    e.preventDefault();
     dispatch(searched(input));
   };
+  // console.log(input);
   return (
     <>
       <form onSubmit={handleSearch}>

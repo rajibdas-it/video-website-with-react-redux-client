@@ -9,9 +9,7 @@ const Tags = () => {
     dispatch(fetchTags());
   }, [dispatch]);
 
-  const { tags, isLoading, isError, error } = useSelector(
-    (state) => state.tags
-  );
+  const { tags } = useSelector((state) => state.tags);
 
   return (
     tags?.length > 0 && (
